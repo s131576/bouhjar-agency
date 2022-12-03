@@ -1,20 +1,12 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
+import * as React from 'react'
+import { Link } from 'gatsby'
+import * as styles from '../styles/global.css'
+import Navbar from './Navbar'
+import { useStaticQuery,graphql } from 'gatsby'
 
-import * as React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
-import "./layout.css"
-
-const Layout = ({ children }) => {
+const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query {
       site {
         siteMetadata {
           title
@@ -22,35 +14,22 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
+    <div className='layout'>
+      <title>{pageTitle} | {data.site.siteMetadata.title}</title>
+      <header><h1 className='gatsbyTitle'>{data.site.siteMetadata.title}</h1></header>
+      <Navbar />
+      <main>
+        <h1>{pageTitle}</h1>
+        <div>
+        {children}
+        </div>
+      </main>
+      <footer>
+        <p>Copyright ©2022 Bouhjar Rachad</p>
+      </footer>
+    </div>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
