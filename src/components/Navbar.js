@@ -6,7 +6,7 @@ const navBar=()=>{
        <nav>
         <ul className='linksPosition'>
           <li className='links'><Link to="/">Home</Link></li>
-          <li className='links'><Link to="/movies">Movies</Link></li>
+          <li className='links'><Link to="../../Movie">Movies</Link></li>
         </ul>
       </nav>
   )
