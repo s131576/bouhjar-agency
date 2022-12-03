@@ -26,7 +26,7 @@ const Layout = ({ pageTitle, children }) => {
         </div>
       </main>
       <footer>
-        <p>Copyright ©2022 Bouhjar Rachad</p>
+        <p>Copyright©2022 Bouhjar Rachad</p>
       </footer>
     </div>
   )
