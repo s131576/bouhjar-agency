@@ -1,0 +1,15 @@
+.containermovies{
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin:0px;
+  width: 100%;
+  height: 50vh;
+}
+.tekstmovies{
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+  color:brown;
+}
