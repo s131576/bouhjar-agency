@@ -4,7 +4,7 @@
   text-decoration: none;
 }
 html,body{
-  min-height: 100%;
+  min-height: 100vh;
   background-color: blanchedalmond;
 }
 p{
@@ -12,7 +12,7 @@ p{
   line-height: 1.5em;
 }
 .layout{
-  max-width: 1200px;
+  max-width: 90%;
   margin:0 auto;
 }
 nav{

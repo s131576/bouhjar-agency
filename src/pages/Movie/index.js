@@ -5,6 +5,7 @@ import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import movieBundle from '../../components/moviesBundle.js'
 import MOVIE from '../../components/moviesBundle.js'
+import * as styles from '../../styles/movies.module.css'
 
 const moviesPage = ({data:{allWpMovie:{edges},wpPage:{actorFields}}}) => {
   const image=getImage(actorFields.picture.localfile)
@@ -21,7 +22,7 @@ const moviesPage = ({data:{allWpMovie:{edges},wpPage:{actorFields}}}) => {
             __html: actorFields.description,
           }}
         />
-      <div>
+      <div className={styles.eindelijk}>
         {edges.map(({node:movie})=>{
            return <MOVIE key={movie.id} slug={movie.slug} movie={movie} />
         })}

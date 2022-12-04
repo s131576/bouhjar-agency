@@ -4,12 +4,34 @@
   justify-content: center;
   flex-wrap: wrap;
   margin:0px;
-  width: 100%;
-  height: 50vh;
+  width: auto;
+  height: auto;
 }
 .tekstmovies{
   text-align: center;
   font-weight: bold;
   font-size: 50px;
   color:brown;
+}
+.eindelijk {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  margin: 4px ;
+}
+.eindelijk img{
+  width: 90%;
+  text-align: center;
+  margin-bottom: 2rem;
+  height: 80vh;
+}
+.eindelijk p{
+font-size: 18px;
+text-decoration: underline;
+}
+.eindelijk img:hover{
+  height: 500px;
+  width: 600px;
+  border-radius: 20px;
+  transition: 0.5s;
+  text-align: right;
 }

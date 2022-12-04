@@ -15,30 +15,32 @@ const IndexPage = ({
   const image = getImage(homeFields.picture.localFile)
   return (
     <Layout>
-
-      <section className={styles.homerock}>
-        <div>
-          <h1>{homeFields.title}</h1>
-          <div>
-          <GatsbyImage className={styles.imagerock}
-            image={image}
-            alt={homeFields.picture.altText}
-          />
-        </div>
-          <div
+      <section className={styles.rockhome}>
+      <div className={styles.inforock}>
+      <h1>{homeFields.title}</h1>
+      <div
             dangerouslySetInnerHTML={{
               __html: homeFields.description,
             }}
           />
-        </div>
+      </div>
+      <div>
+      <GatsbyImage
+            image={image}
+            alt={homeFields.picture.altText}
+          />
+      </div>
       </section>
-
       <h2 className={styles.recommend}> Recommended Movies</h2>
-      <section className={styles.showcasePosition}>
+      <div className={styles.picturemove}>
+      <section className={styles.picturemovebody}>
+        <div className={styles.card}>
       {homeFields.featuresProducts.map(movie => {
-        return <MOVIE slug={`Movie/${movie.slug}`} key={movie.id} movie={movie} />
+        return <div className={styles.homepicture}> <MOVIE slug={`Movie/${movie.slug}`} key={movie.id} movie={movie} /> </div>
       })}
+      </div>
       </section>
+      </div>
     </Layout>
   )
 }

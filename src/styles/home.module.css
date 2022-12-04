@@ -29,3 +29,54 @@
   font-size: 50px;
   text-decoration: underline;
 }
+
+.picturemove{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.picturemovebody{
+  display: flex;
+  justify-content: center;
+  min-height: 50vh;
+  align-items: center;
+}
+.card{
+  display: flex;
+  width: 100%;
+}
+.homepicture{
+ justify-content: space-between;
+ margin: 1rem;
+}
+.homepicture img{
+ height: 500px;
+ width: 500px;
+ border-radius: 25px;
+}
+.homepicture p{
+  color: brown;
+  margin-bottom: 0.2rem;
+}
+.card img{
+  width: 400px;
+}
+.card img:hover{
+  height: 400px;
+  width: 400px;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+.rockhome{
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 0.1rem;
+  justify-content: space-between;
+  border-radius: 25px;
+}
+.rockhome img{
+  border-radius: 25px;
+  height: 50vh;
+}

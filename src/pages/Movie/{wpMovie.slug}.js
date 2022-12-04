@@ -25,6 +25,7 @@ const movieDetail = ({
         </div>
         <GatsbyImage className={styles.picturemovie} image={image} alt={movie.picture.altText} />
         </article>
+        <article>
         <p><span>Rating:</span>{movie.rating}/10</p>
         <div dangerouslySetInnerHTML={{ __html: movie.description }} />
         <p><span>Director:</span>{movie.director}</p>
@@ -32,6 +33,7 @@ const movieDetail = ({
         <p><span>Cost:</span>{movie.cost}</p>
         <p><span>Revenue:</span>{movie.revenue}</p>
         <div dangerouslySetInnerHTML={{ __html: movie.cast }} />
+        </article>
       </section>
     </Layout>
   )
