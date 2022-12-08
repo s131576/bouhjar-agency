@@ -4,7 +4,7 @@
   text-decoration: none;
 }
 html,body{
-  min-height: 100vh;
+  min-height: auto;
   background-color: blanchedalmond;
 }
 p{

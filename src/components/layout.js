@@ -20,7 +20,7 @@ const Layout = ({children }) => {
       <title>{data.site.siteMetadata.title}</title>
       <header><h1 className='gatsbyTitle'>{data.site.siteMetadata.title}</h1></header>
       <Navbar />
-      <main>
+      <main className={styles.index}>
         {children}
       </main>
       <Footer />

@@ -15,7 +15,7 @@ const moviesPage = ({data:{allWpMovie:{edges},wpPage:{actorFields}}}) => {
       image={image}
       alt={actorFields.picture.altText}
       />
-      <section>
+      <section className={styles.moviesIndexPage}>
         <h2>{actorFields.title}</h2>
         <div
           dangerouslySetInnerHTML={{

@@ -13,18 +13,27 @@ const movieDetail = ({
   const image = getImage(movie.picture.localFile)
   return (
     <Layout pageTitle="movie templates">
-      <section>
+      <div>
+        <section className={styles.indexmovie}>
         <article>
         <h1>{movie.title}</h1>
-        <div>
+        <div className={styles.genres}>
           {genre.map((role, i) => (
             <span key={i}>
               {role.name} {i + 1 < genre.length && "/"}
             </span>
           ))}
         </div>
-        <GatsbyImage className={styles.picturemovie} image={image} alt={movie.picture.altText} />
         </article>
+
+        <article>
+        <div className={styles.picturemovie}>
+        <GatsbyImage image={image} alt={movie.picture.altText} />
+        </div>
+        </article>
+        </section>
+
+        <section>
         <article>
         <p><span>Rating:</span>{movie.rating}/10</p>
         <div dangerouslySetInnerHTML={{ __html: movie.description }} />
@@ -34,7 +43,8 @@ const movieDetail = ({
         <p><span>Revenue:</span>{movie.revenue}</p>
         <div dangerouslySetInnerHTML={{ __html: movie.cast }} />
         </article>
-      </section>
+        </section>
+      </div>
     </Layout>
   )
 }
