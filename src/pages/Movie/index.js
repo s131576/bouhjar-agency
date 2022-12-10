@@ -11,6 +11,7 @@ const moviesPage = ({data:{allWpMovie:{edges},wpPage:{actorFields}}}) => {
   const image=getImage(actorFields.picture.localfile)
   return (
     <Layout pageTitle='Movies Dwayne Johnson'>
+      <div className={styles.bodyMovies}>
       <GatsbyImage 
       image={image}
       alt={actorFields.picture.altText}
@@ -28,6 +29,7 @@ const moviesPage = ({data:{allWpMovie:{edges},wpPage:{actorFields}}}) => {
         })}
       </div>
       </section>
+      </div>
     </Layout>
   )
 }

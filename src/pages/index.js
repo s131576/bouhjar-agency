@@ -1,8 +1,7 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
 import Layout from '../components/layout'
-import { StaticImage } from 'gatsby-plugin-image'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { StaticImage } from 'gatsby-plugin-image'
 import { graphql } from "gatsby"
 import * as styles from '../styles/home.module.css'
 import MOVIE from '../components/moviesBundle.js'
@@ -16,21 +15,28 @@ const IndexPage = ({
   return (
     <Layout>
       <section className={styles.rockhome}>
-      <div className={styles.inforock}>
+      <div>
       <h1>{homeFields.title}</h1>
       <div
             dangerouslySetInnerHTML={{
               __html: homeFields.description,
             }}
           />
-      </div>
-      <div>
-      <GatsbyImage
+          <GatsbyImage
             image={image}
             alt={homeFields.picture.altText}
           />
       </div>
+      <div>
+        <h1>So... Enjoy and</h1>
+        <p>buy some popcorn!!!!!!!!!</p>
+       <StaticImage className={styles.popcornImage}
+        alt="randomized unsplash image!"
+        src="../images/popcorn.jpg"
+      />
+      </div>
       </section>
+      
       <h2 className={styles.recommend}> Recommended Movies</h2>
       <div className={styles.picturemove}>
       <section className={styles.picturemovebody}>

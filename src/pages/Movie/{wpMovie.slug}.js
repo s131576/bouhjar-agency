@@ -11,12 +11,13 @@ const movieDetail = ({
       genres: { nodes: genre },
     } } }) => {
   const image = getImage(movie.picture.localFile)
+  const tekst=movie.cast.split(',')
+  console.log(tekst);
   return (
     <Layout pageTitle="movie templates">
       <div>
-        <section className={styles.indexmovie}>
-        <article>
-        <h1>{movie.title}</h1>
+        <section>
+        <h1 className={styles.title}>{movie.title}</h1>
         <div className={styles.genres}>
           {genre.map((role, i) => (
             <span key={i}>
@@ -24,17 +25,22 @@ const movieDetail = ({
             </span>
           ))}
         </div>
-        </article>
-
-        <article>
-        <div className={styles.picturemovie}>
-        <GatsbyImage image={image} alt={movie.picture.altText} />
-        </div>
-        </article>
         </section>
 
+        <section className={styles.movieContainer}>
+        <div className={styles.trailerMovie}>
+             <video controls width="99%" height="auto" autoPlay="autoplay"  >
+             <source src={movie.trailer.mediaItemUrl}  type="video/mp4"/>
+             </video>
+        </div>
+        <div className={styles.trailerImage} >
+            <GatsbyImage image={image} alt={movie.picture.altText} />
+        </div>
+        </section>
+        
+
         <section>
-        <article>
+        <div>
         <p><span>Rating:</span>{movie.rating}/10</p>
         <div dangerouslySetInnerHTML={{ __html: movie.description }} />
         <p><span>Director:</span>{movie.director}</p>
@@ -42,8 +48,9 @@ const movieDetail = ({
         <p><span>Cost:</span>{movie.cost}</p>
         <p><span>Revenue:</span>{movie.revenue}</p>
         <div dangerouslySetInnerHTML={{ __html: movie.cast }} />
-        </article>
-        </section>
+        </div>
+        </section> 
+
       </div>
     </Layout>
   )
@@ -63,10 +70,13 @@ query ($slug:String) {
       picture {
         localFile {
           childImageSharp {
-            gatsbyImageData(placeholder: BLURRED)
+            gatsbyImageData( width:900 height:503 placeholder: BLURRED  aspectRatio:1)
           }
         }
         altText
+      }
+      trailer {
+        mediaItemUrl
       }
     }
     genres {
