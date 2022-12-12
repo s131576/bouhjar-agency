@@ -11,8 +11,8 @@ const movieDetail = ({
       genres: { nodes: genre },
     } } }) => {
   const image = getImage(movie.picture.localFile)
-  const tekst=movie.cast.split(',')
-  console.log(tekst);
+  let tekst=movie.cast.split(',')
+  tekst=tekst.join(' - ')
   return (
     <Layout pageTitle="movie templates">
       <div>
@@ -26,7 +26,6 @@ const movieDetail = ({
           ))}
         </div>
         </section>
-
         <section className={styles.movieContainer}>
         <div className={styles.trailerMovie}>
              <video controls width="99%" height="auto" autoPlay="autoplay"  >
@@ -37,8 +36,6 @@ const movieDetail = ({
             <GatsbyImage image={image} alt={movie.picture.altText} />
         </div>
         </section>
-        
-
         <section>
         <div>
         <p><span>Rating:</span>{movie.rating}/10</p>
@@ -47,10 +44,9 @@ const movieDetail = ({
         <p><span>Producer:</span>{movie.producer}</p>
         <p><span>Cost:</span>{movie.cost}</p>
         <p><span>Revenue:</span>{movie.revenue}</p>
-        <div dangerouslySetInnerHTML={{ __html: movie.cast }} />
+        <span>Cast:{tekst?.cast || tekst}</span>
         </div>
         </section> 
-
       </div>
     </Layout>
   )

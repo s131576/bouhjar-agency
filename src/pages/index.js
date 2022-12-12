@@ -27,7 +27,7 @@ const IndexPage = ({
             alt={homeFields.picture.altText}
           />
       </div>
-      <div>
+      <div className={styles.popcorn}>
         <h1>So... Enjoy and</h1>
         <p>buy some popcorn!!!!!!!!!</p>
        <StaticImage className={styles.popcornImage}
