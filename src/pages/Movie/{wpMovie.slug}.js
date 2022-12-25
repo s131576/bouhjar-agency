@@ -25,6 +25,7 @@ const movieDetail = ({
             </span>
           ))}
         </div>
+        <div className={styles.description} dangerouslySetInnerHTML={{ __html: movie.description }} />
         </section>
         <section className={styles.movieContainer}>
         <div className={styles.trailerMovie}>
@@ -38,13 +39,12 @@ const movieDetail = ({
         </section>
         <section>
         <div>
-        <p><span>Rating:</span>{movie.rating}/10</p>
-        <div dangerouslySetInnerHTML={{ __html: movie.description }} />
-        <p><span>Director:</span>{movie.director}</p>
-        <p><span>Producer:</span>{movie.producer}</p>
-        <p><span>Cost:</span>{movie.cost}</p>
-        <p><span>Revenue:</span>{movie.revenue}</p>
-        <span>Cast:{tekst?.cast || tekst}</span>
+        <p><span >Rating: </span>{movie.rating}/10</p>  
+        <p><span>Director: </span>{movie.director}</p>
+        <p><span>Producer: </span>{movie.producer}</p>
+        <p><span>Cost: €</span>{movie.cost} Million </p>
+        <p><span>Revenue: €</span>{movie.revenue} Million</p>
+        <p><span>Cast:</span> {tekst || movie?.cast}</p>
         </div>
         </section> 
       </div>

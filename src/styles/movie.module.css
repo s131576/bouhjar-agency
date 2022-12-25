@@ -12,6 +12,7 @@
   font-size: 16px;
   padding: 0.2rem;
   margin-bottom: 0.8rem;
+  color: brown;
 }
 .movieContainer{
   display: grid;
@@ -21,4 +22,7 @@
 
 .trailerImage{
   margin-left: 0.1rem;
+}
+.description{
+  text-align: center;
 }

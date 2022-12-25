@@ -37,6 +37,7 @@
   border-top: 1px dotted black;
   border-bottom: 1px dotted black;
   border-radius: 25px;
+  padding-bottom: 1rem;
 
 }
 .picturemovebody{
@@ -86,7 +87,7 @@
   height: 50vh;
 }
 .popcornImage{
-  height: 500px;
-  width: 600px;
+  height: auto;
+  width: auto;
   border-radius: 25px;
 }
