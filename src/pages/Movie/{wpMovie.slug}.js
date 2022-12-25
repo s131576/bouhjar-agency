@@ -28,11 +28,6 @@ const movieDetail = ({
         <div className={styles.description} dangerouslySetInnerHTML={{ __html: movie.description }} />
         </section>
         <section className={styles.movieContainer}>
-        <div className={styles.trailerMovie}>
-             <video controls width="99%" height="auto" autoPlay="autoplay"  >
-             <source src={movie.trailer.mediaItemUrl}  type="video/mp4"/>
-             </video>
-        </div>
         <div className={styles.trailerImage} >
             <GatsbyImage image={image} alt={movie.picture.altText} />
         </div>
