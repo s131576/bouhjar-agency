@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
 import * as styles from '../styles/global.css'
 import Navbar from './Navbar'
 import Footer from './footer'
@@ -20,7 +19,7 @@ const Layout = ({children }) => {
       <title>{data.site.siteMetadata.title}</title>
       <header><h1 className='gatsbyTitle'>{data.site.siteMetadata.title}</h1></header>
       <Navbar />
-      <main className={styles.index}>
+      <main>
         {children}
       </main>
       <Footer />

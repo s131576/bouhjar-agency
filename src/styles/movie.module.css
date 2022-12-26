@@ -1,27 +1,14 @@
-
 .title{
   text-align: center;
   text-decoration: underline;
 }
 .genres{
   margin-top: 0.2rem;
-  border-radius: 50px;
   width: auto;
   text-align: center;
   font-weight: bold;
   font-size: 16px;
-  padding: 0.2rem;
-  margin-bottom: 0.8rem;
   color: brown;
-}
-.movieContainer{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding-top: 1rem;
-}
-
-.trailerImage{
-  margin-left: 0.1rem;
 }
 .description{
   text-align: center;

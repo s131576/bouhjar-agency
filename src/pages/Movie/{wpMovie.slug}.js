@@ -10,13 +10,15 @@ const movieDetail = ({
       moviesFields: movie,
       genres: { nodes: genre },
     } } }) => {
+console.log("COPRYRIGHTS IMAGES:Red notice:https://www.allmovie.com/movie/red-notice-v702384 - Faster:https://www.imdb.com/title/tt1433108/mediaviewer/rm2524546560/?ref_=tt_ov_i -Skyscraper:https://www.imdb.com/title/tt5758778/mediaviewer/rm824746497/?ref_=tt_ov_i - Rampage:https://www.imdb.com/title/tt2231461/mediaviewer/rm2728020480/?ref_=tt_ov_i - Fast & Furious Presents: Hobbs & Shaw:https://www.imdb.com/title/tt6806448/mediaviewer/rm1367459073/?ref_=tt_ov_i - Black Adam:https://www.imdb.com/title/tt6443346/mediaviewer/rm2091778049/?ref_=tt_ov_i ");
+
   const image = getImage(movie.picture.localFile)
   let tekst=movie.cast.split(',')
   tekst=tekst.join(' - ')
   return (
     <Layout pageTitle="movie templates">
       <div>
-        <section>
+        <section className={styles.moviePageIndex}>
         <h1 className={styles.title}>{movie.title}</h1>
         <div className={styles.genres}>
           {genre.map((role, i) => (
@@ -25,11 +27,13 @@ const movieDetail = ({
             </span>
           ))}
         </div>
-        <div className={styles.description} dangerouslySetInnerHTML={{ __html: movie.description }} />
         </section>
         <section className={styles.movieContainer}>
         <div className={styles.trailerImage} >
             <GatsbyImage image={image} alt={movie.picture.altText} />
+            <div>
+            <div className={styles.description} dangerouslySetInnerHTML={{ __html: movie.description }} />
+            </div>
         </div>
         </section>
         <section>
@@ -61,7 +65,7 @@ query ($slug:String) {
       picture {
         localFile {
           childImageSharp {
-            gatsbyImageData( width:900 height:503 placeholder: BLURRED  aspectRatio:1)
+            gatsbyImageData( quality: 100, placeholder: BLURRED,height:400 )
           }
         }
         altText
@@ -78,4 +82,5 @@ query ($slug:String) {
   }
 }
 `
+
 export default movieDetail

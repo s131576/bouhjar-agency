@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from '../styles/movies.module.css'
-const MOVIE = ({ movie, slug }) => {
+const Movie = ({ movie, slug }) => {
   const profile = getImage(movie.moviesFields.picture.localFile)
   return (
     <Link to={slug}>
@@ -17,4 +17,4 @@ const MOVIE = ({ movie, slug }) => {
     </Link>
   )
 }
-export default MOVIE
+export default Movie

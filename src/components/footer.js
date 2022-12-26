@@ -5,7 +5,7 @@ const Footer=({siteTitle})=>{
     <footer>
       <section>
       <p>{siteTitle}</p>
-      <p>Copyright©2022 Bouhjar Rachad</p>
+      <p>Copyright©2023 Bouhjar Rachad</p>
       </section>
     </footer>
   )
